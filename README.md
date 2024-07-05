@@ -1,11 +1,13 @@
 # p-control
 
-> promise concurrency control. Async task control by concurrent number in a easy way.
+Promise concurrency control.
+
+Async task control by concurrent number in a easy way.
 
 ## features
 
 - control async task by concurrent number
-- easy to use
+- api is elegant and easy to use
 - promise based
 - support browser and nodejs
 - very small size
