@@ -6,9 +6,10 @@
   "type": "module",
   "source": "src/pControl.ts",
   "amdName": "PC",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "unpkg": "./dist/index.umd.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/pControl.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.js",

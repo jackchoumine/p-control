@@ -6,6 +6,7 @@
 
 - control async task by concurrent number
 - easy to use
+- promise based
 - support browser and nodejs
 - very small size
 
@@ -17,12 +18,12 @@ npm install p-control
 
 ## usage
 
-### node esm
+### esm
 
 ```js
 import pControl from 'p-control';
 
-const control = pControl(2)
+const control = pControl(2) // control concurrent number，default is 6 because of browser limit http request number is 6
 const taskParams = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // async task
@@ -34,11 +35,11 @@ const task = params => {
   })
 }
 
-// add task to control
+// add task to control with params firstly
 taskParams.forEach(params => {
   control.add(task, params) // add task params will be passed to task function
 })
-// start all tasks
+// then start all tasks
 control
   .start(res => {
     // current concurrent tasks is done
