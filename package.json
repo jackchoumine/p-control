@@ -1,0 +1,53 @@
+{
+  "name": "p-control",
+  "version": "1.0.0",
+  "description": "promise concurrency control easy to use. async task control",
+  "private": false,
+  "type": "module",
+  "source": "src/pControl.ts",
+  "amdName": "PC",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "unpkg": "./dist/index.umd.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "microbundle"
+  },
+  "keywords": [
+    "promise control",
+    "promise limit",
+    "p control",
+    "p-limit",
+    "p-control",
+    "concurrency control",
+    "control",
+    "concurrency",
+    "task control",
+    "task concurrency",
+    "async task concurrency",
+    "async task control",
+    "tiny-tool",
+    "small-tool"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jackchoumine/p-control.git"
+  },
+  "homepage": "https://github.com/jackchoumine/p-control?tab=readme-ov-file#p-control ",
+  "author": "Jack Chou <zhouqijun4job@163.com>",
+  "devDependencies": {
+    "microbundle": "^0.15.1",
+    "typescript": "^5.5.3"
+  }
+}
