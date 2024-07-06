@@ -2,7 +2,7 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-07-05 13:37:15
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-07-06 15:41:38
+ * @LastEditTime: 2024-07-06 15:43:13
  * @Description : async tasks control concurrent
  */
 /**
@@ -40,7 +40,8 @@ export default function pControl(limit: number = 6) {
     taskQueue.push({ task, params })
     taskSize++
   }
-  type ConcurrentDone = (res: any[], doneSize: number) => void
+  type Result = { index: number; result: any }
+  type ConcurrentDone = (res: Result[], doneSize: number) => void
   /**
    * start to run all tasks
    * @param concurrentDone callback call when concurrent tasks are finished, params is results of current tasks
