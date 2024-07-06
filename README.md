@@ -104,7 +104,7 @@ Have two methods:
 
 Add a task to control with params.
 
-#### `start(concurrentDone: (res: {index:number,result:any }[], doneSize: number) => void): Promise<any[]>`
+#### `start(concurrentDone?: (res: {index:number,result:any }[], doneSize: number) => void): Promise<any[]>`
 
 Start all tasks, `concurrentDone` will be called when current concurrent tasks is done.
 
