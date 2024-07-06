@@ -5,7 +5,7 @@
   "private": false,
   "type": "module",
   "source": "src/pControl.ts",
-  "amdName": "PC",
+  "amdName": "PControl",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "unpkg": "dist/index.umd.js",
