@@ -59,7 +59,7 @@ asyncControl
     // [{index:0, result: 1},{index:1, result: 2}] 2
     // [{index:2, result: 3},{index:4, result: 3}] 4
     // ...
-    console.log(res)
+    console.log(res, doneSize)
   })
   .then(allTaskResults => {
     // all tasks is done
