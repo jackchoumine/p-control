@@ -1,11 +1,11 @@
 /*
  * @Author      : ZhouQiJun
- * @Date        : 2024-07-05 14:21:01
+ * @Date        : 2024-07-06 14:08:43
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-07-05 15:19:58
+ * @LastEditTime: 2024-07-06 14:09:22
  * @Description :
  */
-import pControl from '../../src/pControl'
+import pControl from '../dist/index.js'
 
 const control = pControl(2)
 
