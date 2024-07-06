@@ -91,19 +91,19 @@ const pControl = require('p-control')
 
 ## API
 
-### pControl(concurrent: number = 6): AsyncControl
+### `pControl(concurrent: number = 6): AsyncControl`
 
 Create a async control instance with concurrent number.
 
-### AsyncControl
+### `AsyncControl`
 
 Have two methods:
 
-#### add(task: Function, ...params: any[]): void
+#### `add(task: Function, ...params: any[]): void`
 
 Add a task to control with params.
 
-#### start(callback: (res: any[]) => void): Promise<any[]>
+#### `start(callback: (res: any[]) => void): Promise<any[]>`
 
 Start all tasks, callback will be called when current concurrent tasks is done.
 
