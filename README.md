@@ -110,7 +110,7 @@ Start all tasks, `concurrentDone` will be called when current concurrent tasks i
 
 `concurrentDone` will be called with two arguments:
 
-- `res`: current concurrent tasks results, it's an array with object `{index: number, result: any}`, `index` is index of all task you added and `result` is async task result.
+- `res`: current concurrent tasks results, it's an array with object `{index: number, result: any}`, `index` is index of current task done and `result` is current async task result.
 - `doneSize`: tasks finished size.
 
 You can use `res` to do something when current concurrent tasks is done, and `doneSize` to know how many tasks is done. You can calculate progress bar with `res` or `doneSize`.
