@@ -57,7 +57,7 @@ asyncControl
     // res is current concurrent tasks results
     // doneSize is tasks finished size
     // [{index:0, result: 1},{index:1, result: 2}] 2
-    // [{index:2, result: 3},{index:4, result: 3}] 4
+    // [{index:2, result: 3},{index:3, result: 4}] 4
     // ...
     console.log(res, doneSize)
   })
