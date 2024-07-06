@@ -2,12 +2,12 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-07-06 14:08:43
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-07-06 14:09:22
+ * @LastEditTime: 2024-07-06 15:29:05
  * @Description :
  */
 import pControl from '../dist/index.js'
 
-const control = pControl(2)
+const control = pControl(3)
 
 const taskParams = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -26,9 +26,9 @@ taskParams.forEach(params => {
 })
 // start all tasks
 control
-  .start(res => {
+  .start((res, donSize) => {
     // current concurrent tasks is done
-    console.log(res) // [1,2] // [3,4] // [5,6] // [7,8] // [9,10]
+    console.log(res, donSize) // [1,2] // [3,4] // [5,6] // [7,8] // [9,10]
   })
   .then(allTaskResults => {
     // when all tasks is done

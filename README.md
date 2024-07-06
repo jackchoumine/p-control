@@ -52,11 +52,12 @@ taskParams.forEach(params => {
 })
 // then start all tasks
 asyncControl
-  .start(res => {
+  .start((res, doneSize) => {
     // current concurrent tasks is done
-    // [1,2]
-    // [3,4]
-    // [5,6]
+    // res is current concurrent tasks results
+    // doneSize is tasks finished size
+    // [{index:0, result: 1},{index:1, result: 2}] 2
+    // [{index:2, result: 3},{index:4, result: 3}] 4
     // ...
     console.log(res)
   })
@@ -91,21 +92,28 @@ const pControl = require('p-control')
 
 ## API
 
-### `pControl(concurrent: number = 6): AsyncControl`
+### `pControl(limit: number = 6): AsyncControl`
 
-Create a async control instance with concurrent number.
+Create a async control instance with max concurrent limited number.
 
 ### `AsyncControl`
 
 Have two methods:
 
-#### `add(task: Function, ...params: any[]): void`
+#### `add(task: Function, params: any): void`
 
 Add a task to control with params.
 
-#### `start(callback: (res: any[]) => void): Promise<any[]>`
+#### `start(concurrentDone: (res: {index:number,result:any }[], doneSize: number) => void): Promise<any[]>`
 
-Start all tasks, callback will be called when current concurrent tasks is done.
+Start all tasks, `concurrentDone` will be called when current concurrent tasks is done.
+
+`concurrentDone` will be called with two arguments:
+
+- `res`: current concurrent tasks results, it's an array with object `{index: number, result: any}`, `index` is index of all task you added and `result` is async task result.
+- `doneSize`: tasks finished size.
+
+You can use `res` to do something when current concurrent tasks is done, and `doneSize` to know how many tasks is done. You can calculate progress bar with `res` or `doneSize`.
 
 Start return a promise, when all tasks is done, promise will be resolved.
 
