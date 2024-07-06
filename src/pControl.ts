@@ -1,3 +1,10 @@
+/*
+ * @Author      : ZhouQiJun
+ * @Date        : 2024-07-05 13:37:15
+ * @LastEditors : ZhouQiJun
+ * @LastEditTime: 2024-07-06 14:04:49
+ * @Description : async tasks control concurrent
+ */
 /**
  * control concurrent tasks
  * @param limit maxConcurrencyLimit default 6
@@ -26,7 +33,6 @@ export default function pControl(limit: number = 6) {
       throw new Error('task must be a function')
     }
     taskQueue.push({ task, params })
-    console.log('add task', taskQueue.length)
   }
   type ConcurrentDone = (res: any[]) => void
   /**
